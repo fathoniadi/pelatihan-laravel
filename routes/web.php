@@ -20,6 +20,11 @@ Route::get('/hello', 'ArticleController@index');
 Route::get('/article/create', 'ArticleController@create');
 Route::get('/article/baca/{judul}', 'ArticleController@baca');
 
+Route::get('/category/index', 'CategoryController@index');
+
+Route::get('/category/create', 'CategoryController@create');
+Route::post('/category', 'CategoryController@store');
+
 
 
 

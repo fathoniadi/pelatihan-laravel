@@ -13,11 +13,11 @@
 
 		
 		<div class="box-body">
-			<form action="{{ url('/category') }}" method="POST">
+			<form action="{{ url('/category/'.$category->id) }}" method="POST">
 				{{ csrf_field() }}
 				<div class="form-group">
 					<label>Nama</label>
-					<input type="text" name="nama" class="form-controll">
+					<input type="text" name="nama" class="form-controll" value="{{ $category->nama }}">
 				</div>
 				<button type="submit">Simpan</button>
 			</form>

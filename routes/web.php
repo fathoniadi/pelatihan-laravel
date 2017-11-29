@@ -20,10 +20,17 @@ Route::get('/hello', 'ArticleController@index');
 Route::get('/article/create', 'ArticleController@create');
 Route::get('/article/baca/{judul}', 'ArticleController@baca');
 
-Route::get('/category/index', 'CategoryController@index');
+Route::get('/category/index', 'CategoryController@index')->middleware('auth_middleware');
 
 Route::get('/category/create', 'CategoryController@create');
 Route::post('/category', 'CategoryController@store');
+Route::get('/category/delete/{id}', 'CategoryController@destroy');
+Route::get('/category/{id}/edit', 'CategoryController@edit');
+Route::post('/category/{id}', 'CategoryController@update');
+
+Route::get('/logout', 'AuthController@logout');
+Route::get('/login', 'AuthController@index');
+Route::post('/login', 'AuthController@login');
 
 
 
